@@ -1,0 +1,50 @@
+name: Fetching Data
+on:
+  schedule:
+    - cron: "00 18 * * *"
+  workflow_dispatch:
+  
+jobs:
+  Fetch-Bus-Data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Setup Python environment
+        uses: actions/setup-python@v2
+        with:
+            python-version: '3.8'
+            architecture: 'x64'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Fetch data
+        run: |
+          python trans_bus_kmb.py
+          python trans_bus_ctb_nwfb.py
+          python trans_bus_gmb.py
+          python trans_bus_nlb.py
+          python trans_zmerge.py
+          
+          
+      - name: Update data files
+        uses: test-room-7/action-update-file@v1
+        with:
+            file-path: |
+              routeList.kmb.json
+              routeList.ctb.json
+              routeList.nwfb.json
+              routeList.gmb.json
+              routeList.nlb.json
+              stopList.kmb.json
+              stopList.ctb.json
+              stopList.nwfb.json
+              stopList.gmb.json
+              stopList.nlb.json
+              db.json
+              
+            commit-msg: Update resources
+            github-token: ${{ secrets.ACCESS_TOKEN }}
+            branch: main
