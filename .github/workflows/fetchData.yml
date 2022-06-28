@@ -26,6 +26,7 @@ jobs:
           python trans_bus_ctb_nwfb.py
           python trans_bus_gmb.py
           python trans_bus_nlb.py
+          python trans_bus_lr.py
           python trans_zmerge.py
           
           
@@ -38,11 +39,13 @@ jobs:
               routeList.nwfb.json
               routeList.gmb.json
               routeList.nlb.json
+              routeList.lr.json
               stopList.kmb.json
               stopList.ctb.json
               stopList.nwfb.json
               stopList.gmb.json
               stopList.nlb.json
+              stopList.lr.json
               db.json
               
             commit-msg: Update resources
