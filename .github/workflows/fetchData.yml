@@ -27,6 +27,8 @@ jobs:
           python trans_bus_gmb.py
           python trans_bus_nlb.py
           python trans_bus_lr.py
+          python trans_parse_journeytime.py
+          python trans_parse_gtfs.py
           python trans_zmerge.py
           
           
@@ -46,6 +48,8 @@ jobs:
               stopList.gmb.json
               stopList.nlb.json
               stopList.lr.json
+              gtfs.json
+              routeTime.json
               db.json
               
             commit-msg: Update resources
