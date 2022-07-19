@@ -86,10 +86,14 @@ importRouteListJson('gmb')
 importRouteListJson('nlb')
 importRouteListJson('lr')
 
+#add gtfs
+gtfs = json.load(open('gtfs.json'))
+
+
 db = {
   'routeList': routeList,
-  'stopList': stopList
-  #'stopMap': stopMap,
+  'stopList': stopList,
+  'gtfsRouteList': gtfs['gtfsRouteList']
   #'holidays': holidays
 }
 
