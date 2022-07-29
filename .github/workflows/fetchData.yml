@@ -22,15 +22,8 @@ jobs:
           pip install -r requirements.txt
       - name: Fetch data
         run: |
-          python trans_bus_kmb.py
-          python trans_bus_ctb_nwfb.py
-          python trans_bus_gmb.py
-          python trans_bus_nlb.py
-          python trans_bus_lr.py
-          python trans_bus_mtrbus.py
-          python trans_parse_journeytime.py
-          python trans_parse_gtfs.py
-          python trans_zmerge.py
+          
+          python trans_bus_mtr.py
           
           
       - name: Update data files
@@ -44,6 +37,7 @@ jobs:
               routeList.nlb.json
               routeList.lr.json
               routeList.mtrbus.json
+              routeList.mtr.json
               stopList.kmb.json
               stopList.ctb.json
               stopList.nwfb.json
@@ -51,6 +45,7 @@ jobs:
               stopList.nlb.json
               stopList.lr.json
               stopList.mtrbus.json
+              stopList.mtr.json
               gtfs.json
               routeTime.json
               db.json
