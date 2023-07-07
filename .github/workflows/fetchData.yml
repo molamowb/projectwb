@@ -26,7 +26,6 @@ jobs:
           python trans_bus_ctb_nwfb.py
           python trans_bus_gmb.py
           python trans_bus_nlb.py
-          python trans_bus_mtrbus.py
           python trans_bus_mtr.py
           python trans_parse_journeytime.py
           python trans_parse_gtfs.py
