@@ -23,7 +23,7 @@ jobs:
       - name: Fetch data
         run: |
 
-          python trans_bus_kmb.py
+          python trans_bus_ctb_nwfb.py
           
           
       - name: Update data files
