@@ -23,7 +23,7 @@ jobs:
       - name: Fetch data
         run: |
 
-          python trans_zmerge.py
+          python trans_bus_mtr.py
           
           
       - name: Update data files
