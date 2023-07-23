@@ -23,6 +23,15 @@ jobs:
       - name: Fetch data
         run: |
 
+          python trans_bus_kmb.py
+          python trans_bus_ctb_nwfb.py
+          python trans_bus_gmb.py
+          python trans_bus_nlb.py
+          python trans_bus_lr.py
+          python trans_bus_mtrbus.py
+          python trans_bus_mtr.py
+          python trans_parse_journeytime.py
+          python trans_parse_gtfs.py
           python trans_zmerge.py
           
           
