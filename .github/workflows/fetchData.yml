@@ -23,7 +23,7 @@ jobs:
       - name: Fetch data
         run: |
 
-          python trans_parse_journeytime.py
+          python trans_parse_gtfs.py
           
           
       - name: Update data files
