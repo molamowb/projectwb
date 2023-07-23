@@ -34,7 +34,7 @@ for [route, bound, stopCode, stopId, chn, eng, seq] in routes:
       "dest_en": None,
       "stops": [None] * 100
     }
-  if seq == "1":
+  if int(float(seq)) == 1:
     routeList[route+"_"+bound]["orig_tc"] = chn
     routeList[route+"_"+bound]["orig_sc"] = chn
     routeList[route+"_"+bound]["orig_en"] = eng
